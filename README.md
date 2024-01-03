@@ -53,9 +53,35 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Developed by: Dhanush reddy.T
+
+RegisterNumber:  212223040029
+
+program:
+Up Counter:
+module upcounter(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3 = (q1&q2)^q3;
+q2 = q1^q2;
+q1 = 1^q1;
+end
+endmodule
+
+Down Counter:
+module downcounter(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3 = ((~q1)&(~q2))^q3;
+q2 = (~q1)^q2;
+q1 = 1^q1;
+end
+endmodule
 
 
 
@@ -64,6 +90,7 @@ RegisterNumber:
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+![ Image 2024-01-03 at 12 11 29_430d0d99](https://github.com/danushreddy7/Exp-7-Synchornous-counters-/assets/149035740/44d72599-b2b9-4676-af9e-dc547e32683c)
 
 
 
@@ -74,11 +101,13 @@ RegisterNumber:
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+![ Image 2024-01-03 at 12 12 58_e8201384](https://github.com/danushreddy7/Exp-7-Synchornous-counters-/assets/149035740/b4163101-6561-4010-837c-d01ee83623c3)
 
 
 
 
 ### TRUTH TABLE 
+![ Image 2024-01-03 at 12 11 29_888296cd](https://github.com/danushreddy7/Exp-7-Synchornous-counters-/assets/149035740/8bb0e472-7d04-4032-9cbe-13f7efdaf6e2)
 
 
 
